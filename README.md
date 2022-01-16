@@ -5,9 +5,6 @@ Refer the main repository -> https://github.com/aspnetrun/run-aspnetcore-microse
 
 This repository prepared for the below udemy course.
 
-Screenshot_6
-
-UDEMY COURSE WITH DISCOUNTED - Step by Step Development of this repository -> https://www.udemy.com/course/microservices-architecture-and-implementation-on-dotnet/?couponCode=FA24745CC57592AB612A
 
 See the overall picture of implementations on microservices with .net tools on real-world e-commerce microservices project;
 
