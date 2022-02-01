@@ -27,6 +27,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+        - "5672:5672"
+        - "15672:15672" 
+
   pgadmin:
     container_name: pgadmin
     environment:
@@ -57,4 +64,15 @@ services:
       - basketdb
     ports:
       - "8001:80"
+
+
+  discount.api:
+    container_name: discount.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=admin;Password=admin1234;"
+    depends_on:
+      - discountdb
+    ports:
+      - "8002:80"
 

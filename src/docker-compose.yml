@@ -10,6 +10,9 @@ services:
   discountdb:
     image: postgres
 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
   pgadmin:
     image: dpage/pgadmin4
 
@@ -25,7 +28,14 @@ services:
       context: .
       dockerfile: Services/Basket/Basket.API/Dockerfile
 
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: Services/Discount/Discount.API/Dockerfile
+
 volumes:
   mongo_data:
   postgres_data:
   pgadmin_data:
+
